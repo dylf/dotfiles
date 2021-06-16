@@ -1,0 +1,10 @@
+import:
+  - ~/.config/alacritty/font.yml
+  - ~/.config/alacritty/colorschemes/dracula.yml
+
+background_opacity: 0.95
+dynamic_title: false
+window:
+  padding:
+    x: 6
+    y: 0
