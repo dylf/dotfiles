@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Dylan Fontaine
+	email = dylanfontaine@live.ca
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[includeIf "gitdir:~/projects/work/"]
+	path = ~/.work.gitconfig
