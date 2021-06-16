@@ -9,3 +9,5 @@
 	defaultBranch = main
 [includeIf "gitdir:~/projects/work/"]
 	path = ~/.work.gitconfig
+[pull]
+	rebase = true
