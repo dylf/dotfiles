@@ -1,0 +1,41 @@
+let mapleader=" "
+
+set showmode
+set incsearch
+set nu
+set rnu
+set so=0
+set nowrap
+set timeoutlen
+
+" Automatically join concatted strings and if statements
+set ideajoin
+
+" Plugins
+set commentary
+set NERDTree
+
+" Comment lines
+map <leader>/ gcc
+
+" Toggle file explorer
+nmap <leader>t :NERDTreeToggle<cr>
+
+" Terminal
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
+
+" Recent files
+nmap <leader>e :action RecentFiles<cr>
+
+" Go to file
+nmap <leader>f :action GotoFile<cr>
+" Go to class
+nmap <leader>c :action GotoClass<cr>
+" Go to symbol
+nmap <leader>s :action GotoSymbol<cr>
+" Go to declartion
+nmap gd :action GotoDeclaration<CR>
+
+" Zen mode
+map <leader>z <Action>(ToggleDistractionFreeMode)
+
