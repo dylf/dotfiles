@@ -11,3 +11,5 @@
 	path = ~/.work.gitconfig
 [pull]
 	rebase = true
+[rebase]
+	autoStash = true
