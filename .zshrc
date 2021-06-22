@@ -116,7 +116,7 @@ alias vim=nvim
 alias vi=nvim
 alias v=nvim
 alias rmnm='rm -rf node_modules'
-alias rmven'rm -rf vendor'
+alias rmven='rm -rf vendor'
 alias bat='batcat'
 alias cat='batcat'
 alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
