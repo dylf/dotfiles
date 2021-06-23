@@ -70,7 +70,10 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git k docker docker-compose)
+plugins=(git)
+plugins+=(k)
+plugins+=(docker)
+plugins+=(docker-compose)
 plugins+=(alias-tips)
 plugins+=(aws)
 plugins+=(yarn)
@@ -123,6 +126,8 @@ alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:50
 alias path='echo -e ${PATH//:/\\n}'
 alias work='cd ~/projects/work/'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias rm='rm -i'
+alias mv='mv -i'
 #END ALIASES
 
 # BEGIN SNIPPET: Platform.sh CLI configuration
