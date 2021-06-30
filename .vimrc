@@ -17,7 +17,6 @@ set nu
 set rnu
 set so=0
 set nowrap
-set timeoutlen
 
 " Plugins
 call plug#begin('~/.vim/plugged')
