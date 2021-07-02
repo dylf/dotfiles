@@ -9,22 +9,29 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader=" "
-
+" Settings
 set showmode
 set incsearch
 set nu
 set rnu
 set so=0
 set nowrap
+set smartindent
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " Plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
+
+" Key remaps
+let mapleader=" "
 
 " Comment lines
 map <leader>/ gcc
