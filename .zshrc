@@ -60,6 +60,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+plugins+=(colored-man-pages)
 plugins+=(k)
 plugins+=(docker)
 plugins+=(docker-compose)
@@ -70,6 +71,7 @@ plugins+=(zsh-completions)
 plugins+=(zsh-interactive-cd)
 plugins+=(zsh-autosuggestions)
 plugins+=(zsh-syntax-highlighting)
+plugins+=(z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,12 +112,12 @@ alias v=nvim
 alias rmnm='rm -rf node_modules'
 alias rmven='rm -rf vendor'
 alias bat='batcat'
-alias fzf='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
 alias path='echo -e ${PATH//:/\\n}'
 alias work='cd ~/projects/work/'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias rm='rm -i'
+alias cp='cp -i'
 alias mv='mv -i'
+alias rm='rm -i'
 #END ALIASES
 
 # BEGIN SNIPPET: Platform.sh CLI configuration
