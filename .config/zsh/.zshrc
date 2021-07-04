@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$ZDOTDIR/.oh-my-zsh"
 
 ZSH_THEME=""
 # Uncomment the following line to use case-sensitive completion.
@@ -18,25 +18,11 @@ ZSH_THEME=""
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -77,29 +63,20 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #ALIASES
 alias kill-em-all='docker container kill $(docker ps -aq)'
@@ -118,6 +95,9 @@ alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias tb='nc termbin.com 9999'
+alias zshconf='$EDITOR $ZDOTDIR/.zshrc'
+alias zshsrc='source $ZDOTDIR/.zshrc'
 #END ALIASES
 
 # BEGIN SNIPPET: Platform.sh CLI configuration
@@ -127,11 +107,18 @@ if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/she
 
 # Add additional bin directories to $PATH
 export PATH=~/.local/bin:~/.npm-global/bin:./vendor/bin:$PATH
-fpath=($fpath "$HOME/.zfunctions")
+
+# Add completion to the path
+fpath+="$ZDOTDIR/completion"
+
+eval "$(starship init zsh)"
+
+# fnm
+[ -f ~/.local/bin/fnm ] && eval "`fnm env`"
+
+# Vi mode
+bindkey -v
 
 ### zsh-completions
 autoload -U compinit && compinit
 ###
-
-eval "$(starship init zsh)"
-

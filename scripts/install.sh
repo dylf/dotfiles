@@ -21,7 +21,6 @@ curl -fsSLo ~/.local/bin/nvim https://github.com/neovim/neovim/releases/download
 chmod +x ~/.local/bin/nvim
 sudo ln -s ~/.local/bin/nvim /usr/bin/nvim
 
-
 # Install fonts
 mkdir -p ~/.local/share/fonts
 curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/VictorMono.zip -fsSLo /tmp/VictorMonoAll.zip
@@ -31,3 +30,6 @@ fc-cache -fv
 
 # Set keybindings
 dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+
+# Install fnm
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.local/bin" --skip-shell
