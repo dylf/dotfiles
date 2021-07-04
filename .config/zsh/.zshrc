@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$ZDOTDIR/.oh-my-zsh"
-
+ZSH_CUSTOM="$ZDOTDIR"
 ZSH_THEME=""
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,7 +50,7 @@ plugins+=(colored-man-pages)
 plugins+=(k)
 plugins+=(docker)
 plugins+=(docker-compose)
-plugins+=(alias-tips)
+plugins+=(alias-finder)
 plugins+=(aws)
 plugins+=(yarn)
 plugins+=(zsh-completions)
@@ -62,6 +62,7 @@ plugins+=(z)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+ZSH_ALIAS_FINDER_AUTOMATIC=true
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
