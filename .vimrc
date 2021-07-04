@@ -23,7 +23,7 @@ set softtabstop=2
 set shiftwidth=2
 
 " Plugins
-call plug#begin('vim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
