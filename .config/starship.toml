@@ -1,0 +1,86 @@
+[character]
+error_symbol = "[](bold red)"
+success_symbol = "[](bold green)"
+vicmd_symbol = "[](bold cyan)"
+
+[cmd_duration]
+min_time=50
+format = "[⏳$duration](bold yellow)"
+
+[directory]
+truncation_length = 2
+fish_style_pwd_dir_length = 1
+read_only = " "
+
+[git_branch]
+symbol = " "
+format = '\[[$symbol$branch]($style)\]'
+
+[nodejs]
+format = '\[[$symbol($version)]($style)\]'
+
+[php]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[custom.yadm_clean]
+when = """
+    command -v yadm \
+    && [[ "$PWD" == "$HOME" ]]\
+    || [[ "$PWD" =~ "$HOME/.config" ]]\
+    && yadm diff --quiet\
+    && yadm diff --quiet --cached
+"""
+symbol = "⚙ "
+style = "bold white"
+disabled = true
+
+[custom.yadm_mixed]
+when = """
+    command -v yadm \
+    && [[ "$PWD" == "$HOME" ]]\
+    || [[ "$PWD" =~ "$HOME/.config" ]]\
+    && ! yadm diff --quiet\
+    && ! yadm diff --quiet --cached
+"""
+symbol = "⚙ "
+style = "bold blue"
+disabled = true
+
+[custom.yadm_unstaged]
+when = """
+    command -v yadm \
+    && [[ "$PWD" == "$HOME" ]]\
+    || [[ "$PWD" =~ "$HOME/.config" ]]\
+    && ! yadm diff --quiet\
+    && yadm diff --quiet --cached
+"""
+symbol = "⚙ "
+style = "bold red"
+disabled = true
+
+[custom.yadm_staged]
+when = """
+    command -v yadm \
+    && [[ "$PWD" == "$HOME" ]]\
+    || [[ "$PWD" =~ "$HOME/.config" ]]\
+    && yadm diff --quiet\
+    && ! yadm diff --quiet --cached
+"""
+symbol = "⚙ "
+style = "bold green"
+disabled=true
+
+[custom.pop_os]
+command = "lsb_release -rs"
+when="[[ `lsb_release -is` == \"Pop!_Os\" ]]"
+symbol = " "
+style = 'cyan'
+disabled=true
+
+[custom.ubuntu]
+command = "lsb_release -rs"
+when="[[ `lsb_release -is` == \"Ubuntu\" ]]"
+symbol = " 漢"
+style = 'cyan'
+#disabled=true
