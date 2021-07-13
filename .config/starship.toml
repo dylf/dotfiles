@@ -19,6 +19,9 @@ format = '\[[$symbol$branch]($style)\]'
 [nodejs]
 format = '\[[$symbol($version)]($style)\]'
 
+[package]
+format = '\[[$symbol($version)]($style)\]'
+
 [php]
 symbol = " "
 format = '\[[$symbol($version)]($style)\]'
