@@ -22,6 +22,9 @@ format = '\[[$symbol($version)]($style)\]'
 [package]
 format = '\[[$symbol($version)]($style)\]'
 
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+
 [php]
 symbol = " "
 format = '\[[$symbol($version)]($style)\]'
