@@ -32,4 +32,4 @@ fc-cache -fv
 dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 
 # Install fnm
-curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.local/bin" --skip-shell
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.local/bin" --skip-shell
