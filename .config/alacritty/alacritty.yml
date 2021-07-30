@@ -1,6 +1,6 @@
 import:
   - ~/.config/alacritty/font.yml
-  - ~/.config/alacritty/colorschemes/sweet.yml
+  - ~/.config/alacritty/colorschemes/sweet-terminal.yml
 
 background_opacity: 0.95
 dynamic_title: false
