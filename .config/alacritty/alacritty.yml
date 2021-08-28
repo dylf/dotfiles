@@ -2,9 +2,9 @@ import:
   - ~/.config/alacritty/font.yml
   - ~/.config/alacritty/colorschemes/sweet-terminal.yml
 
-background_opacity: 0.95
 dynamic_title: false
 window:
+  opacity: 0.9
   padding:
     x: 6
     y: 0
