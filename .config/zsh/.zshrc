@@ -99,6 +99,7 @@ alias rm='rm -i'
 alias tb='nc termbin.com 9999'
 alias zshconf='$EDITOR $ZDOTDIR/.zshrc'
 alias zshsrc='source $ZDOTDIR/.zshrc'
+alias aws-auth='authenticate-aws-mfa.sh --name dfontaine'
 #END ALIASES
 
 # BEGIN SNIPPET: Platform.sh CLI configuration
@@ -108,6 +109,10 @@ if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/she
 
 # Add additional bin directories to $PATH
 export PATH=~/.local/bin:~/.npm-global/bin:./vendor/bin:$PATH
+
+## Add solana to path
+export PATH=~/.local/share/solana/install/active_release/bin:$PATH
+##
 
 # Add completion to the path
 fpath+="$ZDOTDIR/completion"
@@ -123,3 +128,5 @@ bindkey -v
 ### zsh-completions
 autoload -U compinit && compinit
 ###
+
+export PATH=~/projects/work/acro/infrastructure/bin:$PATH
