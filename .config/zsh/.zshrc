@@ -131,3 +131,6 @@ autoload -U compinit && compinit
 ###
 
 export PATH=~/projects/work/acro/infrastructure/bin:$PATH
+
+### Add go installation to path
+export PATH=$PATH:/usr/local/go/bin
