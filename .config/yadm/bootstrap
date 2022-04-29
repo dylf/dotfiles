@@ -1,2 +1,10 @@
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
+mkdir -p ~/projects/personal/
+mkdir -p ~/projects/work/
+sudo apt install python3-pip
+pip install --user ansible
+git clone git@github.com:dylf/workstation-playbook.git ~/projects/personal/workstation-playbook
+cd ~/projects/personal/workstation-playbook
+ansible-galaxy install -r requirements.yml
+ansible-playbook local.yaml -k
