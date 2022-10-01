@@ -77,7 +77,8 @@ ZSH_ALIAS_FINDER_AUTOMATIC=true
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Example aliases
+# Vi mode
+bindkey -v
 
 #ALIASES
 alias kill-em-all='docker container kill $(docker ps -aq)'
@@ -103,34 +104,27 @@ alias aws-auth='authenticate-aws-mfa.sh --name dfontaine'
 alias candymachine='ts-node ~/.local/share/metaplex-foundation/metaplex/js/packages/cli/src/candy-machine-cli.ts'
 #END ALIASES
 
-# BEGIN SNIPPET: Platform.sh CLI configuration
+# PATH UPDATES
+## BEGIN SNIPPET: Platform.sh CLI configuration
 export PATH="$HOME/"'.platformsh/bin':"$PATH"
 if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi
-# END SNIPPET
+## END SNIPPET
 
-# Add additional bin directories to $PATH
 export PATH=~/.local/bin:~/.npm-global/bin:./vendor/bin:$PATH
-
-## Add solana to path
+export PATH=$PATH:/usr/local/go/bin
+export PATH=~/projects/work/acro/infrastructure/bin:$PATH
 export PATH=~/.local/share/solana/install/active_release/bin:$PATH
-##
+# END PATH UPDATES
+
+# fnm
+[ -f ~/.local/bin/fnm ] && eval "`fnm env --use-on-cd`"
 
 # Add completion to the path
 fpath+="$ZDOTDIR/completion"
-
-eval "$(starship init zsh)"
-
-# fnm
-[ -f ~/.local/bin/fnm ] && eval "`fnm env`"
-
-# Vi mode
-bindkey -v
 
 ### zsh-completions
 autoload -U compinit && compinit
 ###
 
-export PATH=~/projects/work/acro/infrastructure/bin:$PATH
+eval "$(starship init zsh)"
 
-### Add go installation to path
-export PATH=$PATH:/usr/local/go/bin
