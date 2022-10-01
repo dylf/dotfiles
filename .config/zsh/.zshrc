@@ -116,6 +116,19 @@ export PATH=~/projects/work/acro/infrastructure/bin:$PATH
 export PATH=~/.local/share/solana/install/active_release/bin:$PATH
 # END PATH UPDATES
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export FZF_DEFAULT_OPTS="
+  -m
+  --height 50%
+  --layout=reverse
+  --border
+  --inline-info
+  --preview-window=:hidden
+  --preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+  --bind '?:toggle-preview'
+  "
+
 # fnm
 [ -f ~/.local/bin/fnm ] && eval "`fnm env --use-on-cd`"
 

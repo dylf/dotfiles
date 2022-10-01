@@ -13,3 +13,6 @@
 [submodule ".config/zsh/.oh-my-zsh"]
 	path = .config/zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".fzf"]
+	path = .fzf
+	url = https://github.com/junegunn/fzf.git
