@@ -116,18 +116,36 @@ export PATH=~/projects/work/acro/infrastructure/bin:$PATH
 export PATH=~/.local/share/solana/install/active_release/bin:$PATH
 # END PATH UPDATES
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fpath=($ZDOTDIR/functions "${fpath[@]}")
+autoload -Uz b
+
+# FZF CONFIG
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+
+_fzf_compgen_path() {
+    echo 'oo' && fd --hidden --follow --exclude ".git" . "$1"
+}
+_fzf_compgen_dir() {
+    fd --type d --hidden --follow --exclude ".git" . "$1"
+}
 
 export FZF_DEFAULT_OPTS="
   -m
-  --height 50%
+  --height 80%
   --layout=reverse
   --border
   --inline-info
   --preview-window=:hidden
   --preview '([[ -f {} ]] && (batcat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
   --bind '?:toggle-preview'
+  --bind 'ctrl-n:execute(echo {+} | xargs -o nvim)'
+  --bind 'ctrl-v:execute(code {+})'
   "
+# END FZF CONFIG
 
 # fnm
 [ -f ~/.local/bin/fnm ] && eval "`fnm env --use-on-cd`"
