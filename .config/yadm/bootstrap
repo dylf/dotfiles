@@ -6,5 +6,5 @@ sudo apt install python3-pip
 pip install --user ansible
 git clone git@github.com:dylf/workstation-playbook.git ~/projects/personal/workstation-playbook
 cd ~/projects/personal/workstation-playbook
-ansible-galaxy install -r requirements.yml
-ansible-playbook local.yaml -k
+~/.local/bin/ansible-galaxy install -r requirements.yml
+~/.local/bin/ansible-playbook local.yaml -k
