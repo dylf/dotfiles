@@ -7,4 +7,4 @@ pip install --user ansible
 git clone git@github.com:dylf/workstation-playbook.git ~/projects/personal/workstation-playbook
 cd ~/projects/personal/workstation-playbook
 ~/.local/bin/ansible-galaxy install -r requirements.yml
-~/.local/bin/ansible-playbook local.yaml -k
+~/.local/bin/ansible-playbook local.yml -k
