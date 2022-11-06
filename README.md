@@ -7,11 +7,35 @@ Right now I am on [Pop!_Os](https://pop.system76.com/) on most machines so my co
 
 ## Getting started
 
+### Install yadm
 `yadm` is available in package managers.
 
 Can also be grabbed with `curl`:
 ```
 curl -fsSLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x ~/.local/bin/yadm
+```
+
+### Clone this repo
+
+Once `yadm` is installed clone the repo.
+
+SSH:
+```
+yadm clone git@github.com:dylf/dotfiles.git
+```
+
+HTTPS:
+```
+yadm clone https://github.com/dylf/dotfiles.git
+```
+
+
+### Initialize the submodules
+
+This repo is using submodules to include plugins and programs I use. After an
+inital clone run the following:
+```
+yadm submodule update --init --recursive
 ```
 
 ## Useful things I may do
