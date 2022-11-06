@@ -40,8 +40,7 @@ autoload -Uz b
 
 ## Include config from includes dir
 for f in ${ZDOTDIR}/includes/*(.) ; do
-  echo $f
-  . "${f}"
+  . ${f}
 done
 
 # fnm

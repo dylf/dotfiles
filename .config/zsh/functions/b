@@ -5,5 +5,5 @@ b() {
   | sed -E $'s/(.*)\t(.*)/\\1\t\x1b[36m\\2\x1b[m/g' \
   | fzf --ansi \
   | cut -d$'\t' -f2 \
-  | xargs open
+  | xargs open 2>/dev/null
 }
