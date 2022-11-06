@@ -15,3 +15,5 @@
 	autoStash = true
 [log]
 	abbrevCommit = true
+[alias]
+	cane = commit --amend --no-edit
