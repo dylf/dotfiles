@@ -7,6 +7,9 @@ vicmd_symbol = "[](bold cyan)"
 min_time=50
 format = "[⏳$duration](bold yellow)"
 
+[conda]
+format= '\[[$symbol($environment)]($style)\]'
+
 [directory]
 truncation_length = 2
 fish_style_pwd_dir_length = 1
@@ -17,7 +20,7 @@ symbol = " "
 format = '\[[$symbol$branch]($style)\]'
 
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style))'
+format = '([\[$all_statusahead_behind\]]($style))'
 
 [lua]
 symbol = ''
