@@ -19,6 +19,10 @@ format = '\[[$symbol$branch]($style)\]'
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
 
+[lua]
+symbol = ''
+format = '\[[$symbol($version)]($style)\]'
+
 [nodejs]
 format = '\[[$symbol($version)]($style)\]'
 
