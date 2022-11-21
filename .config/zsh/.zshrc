@@ -46,6 +46,11 @@ for f in ${ZDOTDIR}/includes/*(.) ; do
   . ${f}
 done
 
+# pnpm
+export PNPM_HOME="/home/dylf/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end%
+
 # fnm
 [ -f ~/.local/bin/fnm ] && eval "`fnm env --use-on-cd`"
 
