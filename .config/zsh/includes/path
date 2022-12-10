@@ -3,5 +3,6 @@ export PATH=~/.local/bin:~/.npm-global/bin:./vendor/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export PATH=~/projects/work/acro/infrastructure/bin:$PATH
 export PATH=~/.local/share/solana/install/active_release/bin:$PATH
+export PATH=~/go/bin:$PATH
 # END PATH UPDATES
 

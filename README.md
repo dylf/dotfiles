@@ -21,14 +21,13 @@ Once `yadm` is installed clone the repo.
 
 SSH:
 ```
-yadm clone git@github.com:dylf/dotfiles.git
+yadm clone --recursive git@github.com:dylf/dotfiles.git
 ```
 
 HTTPS:
 ```
-yadm clone https://github.com/dylf/dotfiles.git
+yadm clone --recursive https://github.com/dylf/dotfiles.git
 ```
-
 
 ### Initialize the submodules
 
@@ -49,3 +48,10 @@ or your `.bashrc`
 ```
 curl -fsSLo ~/.bashrc https://raw.githubusercontent.com/dylf/dotfiles/master/.bashrc
 ```
+
+# tmux
+
+I am currently using [tmux-sessionizer (tms)](https://github.com/jrmoulton/tmux-sessionizer)
+to manage my tmux sesssions.
+
+Install via `cargo`: `cargo install tmux-sessionizer`

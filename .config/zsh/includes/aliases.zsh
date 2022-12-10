@@ -8,6 +8,8 @@ alias vi=nvim
 alias v=nvim
 alias n=nvim
 
+alias tma='tmux attach-session'
+
 alias rmnm='rm -rf node_modules'
 alias rmven='rm -rf vendor'
 
