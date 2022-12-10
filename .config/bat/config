@@ -24,3 +24,4 @@
 #--map-syntax "*.ino:C++"
 #--map-syntax ".ignore:Git Ignore"
 --map-syntax "*.install:PHP"
+--theme="Catppuccin-mocha"

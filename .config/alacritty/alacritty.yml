@@ -1,0 +1,10 @@
+import:
+  - ~/.config/alacritty/font.yml
+  - ~/.config/alacritty/colorschemes/catppuccin/catppuccin-mocha.yml
+
+dynamic_title: false
+window:
+  opacity: 0.9
+  padding:
+    x: 6
+    y: 0
