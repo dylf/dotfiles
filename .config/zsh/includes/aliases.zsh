@@ -3,12 +3,17 @@ alias kill-em-all='docker container kill $(docker ps -aq)'
 alias open='xdg-open &> /dev/null'
 alias o='xdg-open &>/dev/null'
 
-alias vim=nvim
-alias vi=nvim
-alias v=nvim
-alias n=nvim
+alias vim=$EDITOR
+alias vi=$EDITOR
+alias v=$EDITOR
+alias nv=nvim
+
+alias lg='lazygit'
 
 alias tma='tmux attach-session'
+
+alias p='pnpm'
+alias lndp='lando pnpm'
 
 alias rmnm='rm -rf node_modules'
 alias rmven='rm -rf vendor'
@@ -26,17 +31,16 @@ alias tb='nc termbin.com 9999'
 alias publicip='dig +short txt ch whoami.cloudflare @1.0.0.1'
 
 alias aws-auth='authenticate-aws-mfa.sh --name dfontaine'
-alias candymachine='ts-node ~/.local/share/metaplex-foundation/metaplex/js/packages/cli/src/candy-machine-cli.ts'
 
-alias zshconf='$EDITOR $ZDOTDIR/.zshrc -c "cd %:p:h"'
-alias zshsrc='source $ZDOTDIR/.zshrc'
+alias zconf='$EDITOR $ZDOTDIR/.zshrc -c "cd %:p:h"'
+alias zsrc='source $ZDOTDIR/.zshrc'
 
 # Global Aliases can be used in pipes
-alias -g gp="grep"
+alias -g gp='grep'
 
 # Suffix Aliases
 # automatically open .txt files in neovim
-alias -s txt="nvim"
+alias -s txt='nvim'
 
 # Parameter aliases
 # Seach man pages
