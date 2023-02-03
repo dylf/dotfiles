@@ -10,7 +10,7 @@ alias nv=nvim
 
 alias lg='lazygit'
 
-alias tma='tmux attach-session'
+alias tma='tmux a || tmux new'
 
 alias p='pnpm'
 alias lndp='lando pnpm'
