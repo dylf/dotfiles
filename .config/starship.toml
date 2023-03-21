@@ -1,10 +1,12 @@
+[aws]
+disabled=true
 [character]
 error_symbol = "[](bold red)"
 success_symbol = "[](bold green)"
 vicmd_symbol = "[](bold cyan)"
 
 [cmd_duration]
-min_time=50
+min_time=1000
 format = "[⏳$duration](bold yellow)"
 
 [conda]
