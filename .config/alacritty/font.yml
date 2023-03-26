@@ -9,11 +9,11 @@ font:
     style: Bold
 
   italic:
-    family: VictorMono Nerd Font 
+    family: VictorMono Nerd Font
     style: Italic
 
   bold_italic:
-    family: VictorMono Nerd Font 
+    family: VictorMono Nerd Font
     style: Bold Italic
 
   size: 15
