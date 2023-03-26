@@ -3,7 +3,7 @@ env:
 
 import:
   - ~/.config/alacritty/font.yml
-  - ~/.config/alacritty/colorschemes/catppuccin/catppuccin-mocha.yml
+  - ~/.config/alacritty/colorschemes/carbonfox.yml
 
 dynamic_title: true
 window:
