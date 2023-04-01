@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Dylan Fontaine
-	email = dylanfontaine@live.ca
+	email = me@dylf.dev
 [core]
 	editor = nvim
 [init]
