@@ -7,6 +7,9 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.color_scheme = "carbonfox"
 
 config.window_decorations = "RESIZE"
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
+config.force_reverse_video_cursor = true
 
 config.background = {
 	{
@@ -14,7 +17,7 @@ config.background = {
 			File = "Pictures/termbg.png",
 		},
 		hsb = {
-			brightness = 0.02,
+			brightness = 0.01,
 		},
 	},
 }
