@@ -370,11 +370,19 @@ globalkeys = gears.table.join(
 	-- Menubar
 	awful.key({ modkey }, "p", function()
 		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	end, { description = "show the menubar", group = "launcher" }),
+	-- Browser
+	awful.key({ modkey }, "b", function()
+		awful.spawn("x-www-browser")
+	end, { description = "open a browser", group = "launcher" }),
+	-- Open file manager
+	awful.key({ modkey }, "f", function()
+		awful.spawn("nautilus")
+	end, { description = "open a file manager", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
-	awful.key({ modkey }, "f", function(c)
+	awful.key({ modkey, "Shift" }, "f", function(c)
 		c.fullscreen = not c.fullscreen
 		c:raise()
 	end, { description = "toggle fullscreen", group = "client" }),
@@ -604,3 +612,13 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 -- }}}
+
+--- {{{
+--  Autostart programs
+--}}}
+awful.spawn.with_shell("compton")
+awful.spawn.with_shell("feh --bg-scale --randomize ~/Pictures/Wallpapers/*")
+-- set up touchpad
+awful.spawn.with_shell('xinput set-prop "$(xinput list --name-only | grep -i touch)" "libinput Tapping Enabled" 1')
+-- remap caps lock to Escape
+awful.spawn.with_shell("setxkbmap -option caps:escape")
