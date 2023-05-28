@@ -20,6 +20,7 @@ plugins+=(zsh-interactive-cd)
 plugins+=(zsh-autosuggestions)
 plugins+=(zsh-syntax-highlighting)
 plugins+=(z)
+plugins+=(asdf)
 
 source $ZSH/oh-my-zsh.sh
 
