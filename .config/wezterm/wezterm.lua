@@ -27,6 +27,7 @@ config.background = {
 		hsb = {
 			brightness = 0.05,
 		},
+		horizontal_align = "Center",
 	},
 }
 

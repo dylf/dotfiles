@@ -47,3 +47,13 @@ alias -s txt='nvim'
 search_man() {
     man $1 | grep -- $2
 }
+
+if [ -x "$(command -v exa)" ]
+then
+  # Overwrite the default ls aliases
+  alias ls=exa
+  alias l='ls -la'
+  alias la='exa -la'
+  alias ll='ls -l'
+  alias lsa='ls -la'
+fi
