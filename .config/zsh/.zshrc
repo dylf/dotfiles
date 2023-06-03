@@ -55,6 +55,9 @@ export PATH="$PNPM_HOME:$PATH"
 # fnm
 [ -f ~/.local/bin/fnm ] && eval "`fnm env --use-on-cd`"
 
+# rtx
+[ -f ~/.local/share/rtx/bin/rtx ] && eval "$(~/.local/share/rtx/bin/rtx activate -s zsh)"
+
 # Add completion to the path
 fpath+="$ZDOTDIR/completion"
 
@@ -63,4 +66,5 @@ autoload -U compinit && compinit
 ###
 
 eval "$(starship init zsh)"
+
 

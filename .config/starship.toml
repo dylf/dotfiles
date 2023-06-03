@@ -102,3 +102,6 @@ when="[[ `lsb_release -is` == \"Ubuntu\" ]]"
 symbol = " 漢"
 style = 'cyan'
 disabled=true
+
+[elixir]
+disabled=true
