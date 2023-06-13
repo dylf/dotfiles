@@ -5,6 +5,7 @@
 	email = me@dylf.dev
 [core]
 	editor = nvim
+	excludesfile = ~/.gitignore
 [init]
 	defaultBranch = main
 [includeIf "gitdir:~/projects/work/"]
