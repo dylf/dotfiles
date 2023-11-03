@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Dylan Fontaine
-	email = me@dylf.dev
+	email = 10430358+dylf@users.noreply.github.com
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
