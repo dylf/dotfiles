@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.font = wezterm.font_with_fallback({
+	{ family = "SpaceMono Nerd Font" },
 	{ family = "ComicShannsMono Nerd Font" },
 	{
 		family = "VictorMono Nerd Font",
@@ -25,11 +26,14 @@ config.background = {
 			File = "Pictures/termbg.png",
 		},
 		hsb = {
-			brightness = 0.05,
+			brightness = 0.00,
 		},
 		horizontal_align = "Center",
 	},
 }
+
+--- Disable bg
+config.background = {}
 
 config.adjust_window_size_when_changing_font_size = false
 
