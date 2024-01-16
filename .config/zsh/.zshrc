@@ -9,7 +9,6 @@ DISABLE_UPDATE_PROMPT="true"
 ## Plugins
 plugins=(git)
 plugins+=(colored-man-pages)
-plugins+=(k)
 plugins+=(docker)
 plugins+=(docker-compose)
 plugins+=(alias-finder)
