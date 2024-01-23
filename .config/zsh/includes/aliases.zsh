@@ -57,3 +57,5 @@ then
   alias ll='ls -l'
   alias lsa='ls -la'
 fi
+
+[ -x "$(command -v btop)" ] && alias htop=btop
