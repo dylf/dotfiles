@@ -16,5 +16,16 @@
 	autoStash = true
 [log]
 	abbrevCommit = true
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+
 [alias]
-	cane = commit --amend --no-edit
+  cane = commit --amend --no-edit
+  stasha = stash --all
+  blame = blame -w -C -C -C
+  wdiff = diff --word-diff
+  fpush = push --force-with-lease
