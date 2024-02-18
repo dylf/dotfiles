@@ -1,0 +1,21 @@
+reboot-to-windows() {
+    # Get the output of efibootmgr and find the line containing "Windows Boot Manager"
+    boot_entry=$(sudo efibootmgr | grep "Windows Boot Manager" | head -n 1)
+    
+    # Check if boot entry is found
+    if [ -z "$boot_entry" ]; then
+        echo "Error: No Windows boot entry found."
+        return 1
+    fi
+    
+    # Extract the boot entry number
+    boot_number=$(echo $boot_entry | awk '{print $1}' | sed 's/Boot//;s/\*//')
+
+    echo "Rebooting into Windows..."
+    
+    # Set the boot order to boot into Windows
+    sudo efibootmgr -n $boot_number
+    
+    # Reboot the system
+    sudo reboot
+}
