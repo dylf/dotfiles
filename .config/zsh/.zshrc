@@ -68,3 +68,5 @@ eval "$(starship init zsh)"
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+[ -f ~/.nx-completion/nx-completion.plugin.zsh ] && source ~/.nx-completion/nx-completion.plugin.zsh
