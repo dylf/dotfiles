@@ -1,0 +1,11 @@
+rebuild-neovim() {
+  pushd ~/projects/oss/neovim
+  make distclean
+  git pull
+  make CMAKE_BUILD_TYPE=RelWithDebInfo
+  pushd build
+  cpack -G DEB
+  sudo dpkg -i nvim-linux64.deb
+  popd > /dev/null
+  popd > /dev/null
+}

@@ -39,7 +39,7 @@ bindkey -v
 
 ## Lazy load custom functions
 fpath=($ZDOTDIR/functions "${fpath[@]}")
-autoload -Uz b reboot-to-windows
+autoload -Uz b reboot-to-windows rebuild-neovim
 
 ## Include config from includes dir
 for f in ${ZDOTDIR}/includes/*(.) ; do
