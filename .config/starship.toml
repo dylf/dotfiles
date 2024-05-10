@@ -1,13 +1,28 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+right_format = """$aws$gcloud$direnv"""
+
 [aws]
-disabled=true
+disabled=false
+format = '[$symbol $profile]($style)'
+style = 'dimmed yellow'
+symbol="\ue7ad"
+[aws.region_aliases]
+us-east-1 = 'us'
+ca-central-1 = 'ca'
+[aws.profile_aliases]
+default-long-term = ' '
+telus-lagoon = '󰰦 '
+personal = ' '
+
 [character]
 error_symbol = "[](bold red)"
 success_symbol = "[](bold green)"
-vicmd_symbol = "[](bold cyan)"
+vimcmd_symbol = "[](bold cyan)"
 
 [cmd_duration]
 min_time=1000
-format = "[⏳$duration](bold yellow)"
+format = "[ $duration](bold yellow)"
 
 [conda]
 format= '\[[$symbol($environment)]($style)\]'
@@ -16,6 +31,18 @@ format= '\[[$symbol($environment)]($style)\]'
 truncation_length = 2
 fish_style_pwd_dir_length = 1
 read_only = " "
+
+[direnv]
+format= '[$symbol]($style)'
+symbol = " "
+disabled = false
+style = "bold black"
+
+[gcloud]
+disabled=false
+symbol=" 󱇶 "
+format= '[$symbol]($style)'
+detect_env_vars = [ 'GCLOUD_PROJECT' ]
 
 [git_branch]
 symbol = " "
@@ -41,67 +68,9 @@ format = '\[[$symbol($version)]($style)\]'
 symbol = " "
 format = '\[[$symbol($version)]($style)\]'
 
-[custom.yadm_clean]
-when = """
-    command -v yadm \
-    && [[ "$PWD" == "$HOME" ]]\
-    || [[ "$PWD" =~ "$HOME/.config" ]]\
-    && yadm diff --quiet\
-    && yadm diff --quiet --cached
-"""
-symbol = "⚙ "
-style = "bold white"
-disabled = true
-
-[custom.yadm_mixed]
-when = """
-    command -v yadm \
-    && [[ "$PWD" == "$HOME" ]]\
-    || [[ "$PWD" =~ "$HOME/.config" ]]\
-    && ! yadm diff --quiet\
-    && ! yadm diff --quiet --cached
-"""
-symbol = "⚙ "
-style = "bold blue"
-disabled = true
-
-[custom.yadm_unstaged]
-when = """
-    command -v yadm \
-    && [[ "$PWD" == "$HOME" ]]\
-    || [[ "$PWD" =~ "$HOME/.config" ]]\
-    && ! yadm diff --quiet\
-    && yadm diff --quiet --cached
-"""
-symbol = "⚙ "
-style = "bold red"
-disabled = true
-
-[custom.yadm_staged]
-when = """
-    command -v yadm \
-    && [[ "$PWD" == "$HOME" ]]\
-    || [[ "$PWD" =~ "$HOME/.config" ]]\
-    && yadm diff --quiet\
-    && ! yadm diff --quiet --cached
-"""
-symbol = "⚙ "
-style = "bold green"
-disabled=true
-
-[custom.pop_os]
-command = "lsb_release -rs"
-when="[[ `lsb_release -is` == \"Pop!_Os\" ]]"
-symbol = " "
-style = 'cyan'
-disabled=true
-
-[custom.ubuntu]
-command = "lsb_release -rs"
-when="[[ `lsb_release -is` == \"Ubuntu\" ]]"
-symbol = " 漢"
-style = 'cyan'
-disabled=true
-
 [elixir]
 disabled=true
+
+[golang]
+symbol = '󰟓 '
+format = '\[[$symbol($version)]($style)\]'
