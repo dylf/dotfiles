@@ -29,3 +29,4 @@
   blame = blame -w -C -C -C
   wdiff = diff --word-diff
   fpush = push --force-with-lease
+	commit = commit -n
