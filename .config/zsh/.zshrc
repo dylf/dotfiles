@@ -68,3 +68,5 @@ eval "$(starship init zsh)"
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 [ -f ~/.nx-completion/nx-completion.plugin.zsh ] && source ~/.nx-completion/nx-completion.plugin.zsh
+export NODE_EXTRA_CA_CERTS=~/.lando/certs/lndo.site.pem
+export AWS_PROFILE=personal
