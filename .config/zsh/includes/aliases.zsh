@@ -10,6 +10,7 @@ alias nv=nvim
 
 alias lg='lazygit'
 alias ly='lazygit --use-config-file "$HOME/.config/yadm/lazygit.yml,$HOME/.config/lazygit/config.yml" --work-tree ~ --git-dir ~/.local/share/yadm/repo.git'
+alias lzd='lazydocker'
 
 alias tma='tmux a || tmux new'
 
