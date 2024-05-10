@@ -9,6 +9,7 @@ DISABLE_UPDATE_PROMPT="true"
 ## Plugins
 plugins=(git)
 plugins+=(colored-man-pages)
+plugins+=(direnv)
 plugins+=(docker)
 plugins+=(docker-compose)
 plugins+=(alias-finder)
@@ -53,9 +54,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 # fnm
 [ -f ~/.local/bin/fnm ] && eval "`fnm env --use-on-cd`"
-
-# rtx
-[ -f ~/.local/share/rtx/bin/rtx ] && eval "$(~/.local/share/rtx/bin/rtx activate -s zsh)"
 
 # Add completion to the path
 fpath+="$ZDOTDIR/completion"

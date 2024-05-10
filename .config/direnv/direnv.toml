@@ -1,0 +1,5 @@
+[global]
+disable_stdin = true
+
+[whitelist]
+prefix = ["~/projects/work"]
