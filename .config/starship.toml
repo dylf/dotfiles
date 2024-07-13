@@ -53,7 +53,7 @@ format = '([\[$all_statusahead_behind\]]($style))'
 
 [lua]
 symbol = ''
-format = '\[[$symbol($version)]($style)\]'
+format = '\[[$symbol ($version)]($style)\]'
 
 [nodejs]
 format = '\[[$symbol($version)]($style)\]'
