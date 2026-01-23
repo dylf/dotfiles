@@ -7,4 +7,7 @@ export PATH=~/go/bin:$PATH
 export PATH=~/.local/share/JetBrains/Toolbox/scripts:$PATH
 export PATH=~/.config/composer/vendor/bin:$PATH
 export PATH="/usr/share/lando/bin:~/.lando/bin${PATH+:$PATH}"; #landopath
+export PATH=~/.zig:$PATH
+export PATH=$HOME/.elixir-install/installs/otp/28.1/bin:$PATH
+export PATH=$HOME/.elixir-install/installs/elixir/1.19.4-otp-28/bin:$PATHK
 # END PATH UPDATES

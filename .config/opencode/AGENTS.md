@@ -1,0 +1,1 @@
+- gh CLI is available for github opetations
