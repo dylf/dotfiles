@@ -12,6 +12,8 @@
 	path = ~/.work.gitconfig
 [pull]
 	rebase = true
+[push]
+  autoSetupRemote = true
 [rebase]
 	autoStash = true
 [log]

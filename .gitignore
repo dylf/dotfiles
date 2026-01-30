@@ -1,2 +1,8 @@
 .rtx.toml
 .npmrc
+.rgignore
+.ignore
+.opencode
+opencode.json
+.lazygit.yml
+AGENTS.md
