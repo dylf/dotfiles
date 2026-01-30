@@ -11,6 +11,15 @@ config.font = wezterm.font_with_fallback({
 	},
 })
 
+config.launch_menu = {
+  {
+    label = 'PowerShell',
+    args = { 'powershell.exe' },
+    -- This 'local' domain forces it to run on Windows, not inside WSL
+    domain = { DomainName = 'local' },
+  },
+}
+
 config.font_size = 18.0
 config.harfbuzz_features = { "calt=0", "clig=1", "liga=0" }
 
