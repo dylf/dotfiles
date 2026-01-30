@@ -69,3 +69,6 @@ eval "$(starship init zsh)"
 
 [ -f ~/.nx-completion/nx-completion.plugin.zsh ] && source ~/.nx-completion/nx-completion.plugin.zsh
 export AWS_PROFILE=personal
+
+# homebrew
+[ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
