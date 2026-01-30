@@ -19,8 +19,13 @@ plugins+=(zsh-completions)
 plugins+=(zsh-interactive-cd)
 plugins+=(zsh-autosuggestions)
 plugins+=(zsh-syntax-highlighting)
-plugins+=(z)
 plugins+=(asdf)
+## If zoxide is installed init it otherwise use z plugin
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+else
+  plugins+=(z)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,13 +58,13 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end%
 
 # fnm
-[ -f ~/.local/bin/fnm ] && eval "`fnm env --use-on-cd`"
+[ -f ~/.local/bin/fnm ] && eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Add completion to the path
 fpath+="$ZDOTDIR/completion"
 
 ### zsh-completions
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 ###
 
 eval "$(starship init zsh)"
@@ -72,3 +77,11 @@ export AWS_PROFILE=personal
 
 # homebrew
 [ -f /home/linuxbrew/.linuxbrew/bin/brew ] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export HUSKY=1
+
+## sessionizer
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s '\eh' "tmux-sessionizer -s 0\n"
+bindkey -s '\et' "tmux-sessionizer -s 1\n"
+bindkey -s '\en' "tmux-sessionizer -s 2\n"
+##
