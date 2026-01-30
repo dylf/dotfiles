@@ -1,7 +1,11 @@
 alias kill-em-all='docker container kill $(docker ps -aq)'
 
-alias open='xdg-open &> /dev/null'
-alias o='xdg-open &>/dev/null'
+if [[ $(uname) != "Darwin" ]]; then
+  alias open='xdg-open &> /dev/null'
+  alias o='xdg-open &> /dev/null'
+else
+  alias o='open'
+fi
 
 alias vim=$EDITOR
 alias vi=$EDITOR
