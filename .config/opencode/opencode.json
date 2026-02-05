@@ -4,6 +4,11 @@
   "autoupdate": true,
   "model": "antigravity-claude-opus-4-5-thinking",
   "enabled_providers": ["google", "opencode", "openai", "github-copilot"],
+  "permission": {
+    "external_directory": {
+      "~/projects/work/**": "allow"
+    }
+  },
   "mcp": {
     "chrome-devtools": {
       "type": "local",
