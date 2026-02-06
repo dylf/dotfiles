@@ -10,4 +10,5 @@ export PATH="/usr/share/lando/bin:~/.lando/bin${PATH+:$PATH}"; #landopath
 export PATH=~/.zig:$PATH
 export PATH=$HOME/.elixir-install/installs/otp/28.1/bin:$PATH
 export PATH=$HOME/.elixir-install/installs/elixir/1.19.4-otp-28/bin:$PATH
+export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"
 # END PATH UPDATES
