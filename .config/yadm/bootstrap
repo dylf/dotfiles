@@ -1,10 +1,31 @@
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+system_type=$(uname -s)
+
+if [ "$system_type" = "Darwin" ]; then
+
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+
+
+else
+  # Should this be even more specific?
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+  sudo apt install python3-pip
+  pip install --user ansible
+  git clone git@github.com:dylf/workstation-playbook.git ~/projects/personal/workstation-playbook
+  cd ~/projects/personal/workstation-playbook
+  ~/.local/bin/ansible-galaxy install -r requirements.yml
+  ~/.local/bin/ansible-playbook local.yml -K
+fi
 
 mkdir -p ~/projects/personal/
 mkdir -p ~/projects/work/
-sudo apt install python3-pip
-pip install --user ansible
-git clone git@github.com:dylf/workstation-playbook.git ~/projects/personal/workstation-playbook
-cd ~/projects/personal/workstation-playbook
-~/.local/bin/ansible-galaxy install -r requirements.yml
-~/.local/bin/ansible-playbook local.yml -K
+
+git clone git@github.com:dylf/nvim-config.git ~/.config/nvim
