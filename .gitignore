@@ -5,4 +5,5 @@
 .opencode
 opencode.json
 .lazygit.yml
-AGENTS.md
+.envrc
+#AGENTS.md
